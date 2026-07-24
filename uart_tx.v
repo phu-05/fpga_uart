@@ -23,7 +23,7 @@ localparam STOP = 2'd3;
 
 reg [1:0] state = IDLE;
 reg [2:0] bit_idx = 3'd0; //sending 8bit, need to keep track what number of bit has sent
-reg [$clog2(CLKS_PER_BIT):0] clk_cnt=0; 
+reg [$clog2(CLKS_PER_BIT)-1:0] clk_cnt=0; 
 reg [7:0] data = 8'b0;
 
 always @(posedge clk) begin
